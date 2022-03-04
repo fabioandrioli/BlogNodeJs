@@ -1,10 +1,7 @@
 const Sequelize = require("Sequelize");
+const databaseConnection = require("./connection")
 
-//Criando a conexão com o banco de dados
-const databaseConnection = new Sequelize("blog","root","",{
-    host: "localhost",
-    dialect: "mysql",
-})
+
 
 //Definindo a model
 //Não é necessario colocar os campos id, created_at, update_at, ele cria automatico.

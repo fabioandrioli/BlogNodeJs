@@ -1,14 +1,16 @@
 express = require('express');
 const app = express();
-const databaseConnection = require('./config/sequelize')
+const handlebars = require('express-handlebars');
+const databaseConnection = require('./config/connection')
 
-databaseConnection.authenticate().then(
-    console.log("Conectado com sucesso")
-).catch(error => console.log(error));
+//configuracao do engine para o front-end - main é template padrao da aplicacao
+var handle = handlebars.create({defaultLayout:'main'})
+app.engine('handlebars',handle.engine)
+app.set('views engine','handlebars');
 
-app.get("/", (req, res) => {
-    res.send("Olá, Mundo!");
-})
+//conexao com o banco de dados mysql
+databaseConnection.authenticate();
+
 
 app.listen(3000,() => {
     console.log("Servidor rodando");
