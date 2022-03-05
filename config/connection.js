@@ -5,4 +5,7 @@ const databaseConnection = new Sequelize("blog","root","",{
     dialect: "mysql",
 })
 
-module.exports = databaseConnection;
+module.exports = {
+   databaseConnection: databaseConnection,
+   Sequelize: Sequelize,
+}

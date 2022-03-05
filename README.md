@@ -15,3 +15,8 @@ Primeiro commit.
     - É a engine do projeto, vai gerenciar a parte frontend do blog. Geralmente é ultilizada o EJS, mas
     o Handlebars parece ser mais bonito em suas declarações. o que facilita no entendimento. Me lembra muito o blade do laravel.
     ```install express-handlebars --save ```
+
+- ejs 
+   - Mudança na ultilizacao do engine, por conta da documentacao do handlebars estar desatualizada.
+   -Pacote  express-handlebars desistalado.
+   ```  npm install ejs ```
