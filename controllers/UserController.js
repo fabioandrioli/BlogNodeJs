@@ -1,12 +1,11 @@
-const Post = require('../models/Post')
-
+const User = require('../models/User')
 module.exports = {
     async index(req,res){
     //    Post.findAll().then(posts =>{
     //     res.render("posts/post.handlebars",{posts:posts})
     //    })
 
-        const posts = await Post.findAll({order: [['id','DESC']]});
+        const posts = await User.findAll({order: [['id','DESC']]});
         res.render("posts/post",{posts:posts})
        
     },

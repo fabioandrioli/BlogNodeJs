@@ -25,3 +25,20 @@ Primeiro commit.
 - Connect flash
    - Para variaveis de sessao
    ```  npm install connect-flash ```
+
+- Express session
+   - Para variaveis de sessao
+   ```  npm install express-session ```
+
+- Passport
+   - Para controle de acesso
+   ``` npm i passport --save ```
+
+- Passport local
+   - Para controle de acesso usando o local, temos que instalar os dois
+   ``` npm i passport-local --save ```
+
+- bcryptjs
+   - Para senhas
+   ``` npm install bcryptjs```
+   

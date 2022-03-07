@@ -8,6 +8,9 @@
 </head>
 <body>
     <ul>
+        <% if (message_sucess !== 'undefined') { %>
+            <h5><%= message_sucess %></h5>
+       <% } %>
         <% posts.forEach(post => { %>
             <li><%= post.title %></li>
             <a href="/post.delete/<%= post.id %>"><button>deletar</button> </a>

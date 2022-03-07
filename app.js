@@ -4,7 +4,26 @@ const connection = require('./config/connection')
 const indexRoutes = require("./routes/indexRouter");
 const path = require('path');
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const session = require('./config/session');
+const flash = require('connect-flash');
+const middleware = require('./middleware')
+const passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+require('./config/auth')(passport)
 
+
+
+//Sessão - é muito importante que fique nessa ordem
+
+app.use(session);
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+
+//middleware
+app.use(middleware.messages)
 
 // Definindo caminho da views
 app.set('views', path.join(__dirname, 'views'));
@@ -17,17 +36,16 @@ app.set("view engine", "ejs");
 
 //body-parser para pegar dados do formulario
 // com ele podemos usar o req.body.nomedataghtml
-// app.use(express.urlencoded({extended: true}));
-// app.use(express.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.urlencoded({extended: true}));
+app.use(cookieParser());
+app.use(express.json())
+// app.use(bodyParser.urlencoded({ extended: false }))
 
-// parse application/json
-app.use(bodyParser.json())
+// // parse application/json
+// app.use(bodyParser.json())
 
 //Configuracao do diretório publico
 app.use(express.static(__dirname + '/public'));
-
-
 
 //conexao com o banco de dados mysql
 connection.databaseConnection.authenticate();
