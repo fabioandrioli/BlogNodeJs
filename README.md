@@ -9,7 +9,7 @@ Primeiro commit.
     - O sequelize facilita o trabalho com o mysql, ele vai ser no nosso ORM.
     ``` npm install sequelize --save ``` 
  - MYSQL
-    ``` npm install mysql2 --save ```
+   - ``` npm install mysql2 --save ```
 
 - Handlebars 
     - É a engine do projeto, vai gerenciar a parte frontend do blog. Geralmente é ultilizada o EJS, mas
