@@ -20,3 +20,8 @@ Primeiro commit.
    - Mudança na ultilizacao do engine, por conta da documentacao do handlebars estar desatualizada.
    -Pacote  express-handlebars desistalado.
    ```  npm install ejs ```
+
+   
+- Connect flash
+   - Para variaveis de sessao
+   ```  npm install connect-flash ```

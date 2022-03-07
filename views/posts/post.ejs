@@ -8,7 +8,10 @@
 </head>
 <body>
     <ul>
-        <li></li>
+        <% posts.forEach(post => { %>
+            <li><%= post.title %></li>
+            <a href="/post.delete/<%= post.id %>"><button>deletar</button> </a>
+        <% }); %>     
     </ul>
 </body>
 </html>
