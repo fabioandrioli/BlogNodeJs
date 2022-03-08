@@ -5,5 +5,15 @@ module.exports = {
         res.locals.message_error = req.flash("message_error")
         res.locals.error = req.flash("errors")
         next();
-    }
+    },
+
+    authenticate(req,res,next){
+        if(req.isAuthenticated()){
+            console.log(req.isAuthenticated())
+            return next()
+        }else{
+            console.log(req.isAuthenticated())
+            res.redirect("/auth/user.login")
+        }
+    }   
 }

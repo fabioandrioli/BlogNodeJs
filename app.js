@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const connection = require('./config/connection')
 const indexRoutes = require("./routes/indexRouter");
+const authRoutes = require("./routes/authRouter");
 const path = require('path');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -9,7 +10,6 @@ const session = require('./config/session');
 const flash = require('connect-flash');
 const middleware = require('./middleware')
 const passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 require('./config/auth')(passport)
 
 
@@ -51,7 +51,8 @@ app.use(express.static(__dirname + '/public'));
 connection.databaseConnection.authenticate();
 
 //Rotas
- app.use("/",indexRoutes);
+app.use("/admin",middleware.authenticate,indexRoutes);
+app.use("/auth",authRoutes);
 // app.get('/', (req, res) => {
 //     res.render('formulario.handlebars')
 // })
