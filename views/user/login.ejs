@@ -10,7 +10,7 @@
     <% if (error !== 'undefined') { %>
         <h5><%= error %></h5>
    <% } %>
-    <form action="/auth/user.login" method="post">
+    <form action="/auth/login" method="post">
         <input type="text" name="email" placeholder="email" value="fabio.drioli@gmail.com">
         <input type="password" name="password" placeholder="password" value="12345678" placeholder="Senha">
         <button type="submit">enviar</button>

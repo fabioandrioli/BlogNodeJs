@@ -13,7 +13,7 @@ module.exports = {
             return next()
         }else{
             console.log(req.isAuthenticated())
-            res.redirect("/auth/user.login")
+            res.redirect("/auth/login")
         }
     }   
 }

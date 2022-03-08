@@ -4,5 +4,5 @@ module.exports = session({
     secret:"blognodejs",
     resave:false,
     saveUninitialized:false,
-    cookie:{maxAge:30 * 60 * 1000}
+    cookie:{maxAge:(60 * 24) * 60 * 1000}
 });
