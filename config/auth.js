@@ -1,34 +1,36 @@
 const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcryptjs')
 const User = require('../models/User')
-const passport = require('passport')
 
-const users = [{
-    id:1,
-    name:"Fabio",
-    email:"fabio.drioli@gmail.com",
-    password:"$2a$06$HT.EmXYUUhNo3UQMl9APmeC0SwoGsx7FtMoAWdzGicZJ4wR1J8alW"//hash da senha 123
-}]
+
+// const users = [{
+//     id:1,
+//     name:"Fabio",
+//     email:"fabio.drioli@gmail.com",
+//     password:"$2a$06$HT.EmXYUUhNo3UQMl9APmeC0SwoGsx7FtMoAWdzGicZJ4wR1J8alW"//hash da senha 123
+// }]
 
 module.exports = function (passport) {
-    function findUser (email){
-        return users.find(item => item.email === email)
+    async function findUser (email){
+        return await User.findOne({email:email})
+        // return users.find(item => item.email === email)
     }
 
-    function findUserById(id){
-        return users.find(item => item.id === id)
+    async function findUserById(id){
+        // return users.find(item => item.id === id)
+       
+        return await User.findOne({id:id})
     }
 
     passport.serializeUser((user,done) => {
         done(null,user.id);
     })
 
-    passport.deserializeUser((id,done) => {
+    passport.deserializeUser(async (id,done) => {
         try {
-            const user = findUserById(id);
+            const user =  await findUserById(id);
             done(null,user)
         } catch (error) {
-            console.log(error)
             return done(error,null)
         }
     })
@@ -36,9 +38,10 @@ module.exports = function (passport) {
     passport.use(new LocalStrategy({
         usernameField:'email',
         passwordField:'password'
-    },(email,password,done) => {
+    },async (email,password,done) => {
         try {
-            const user = findUser(email);
+            const user = await findUser(email)
+                      
             if(!user){
                 return done(null,false)
             }
@@ -48,7 +51,6 @@ module.exports = function (passport) {
             }
             return done(null,user)
         } catch (error) {
-            console.log(error)
             return done(error,false)
         }
     }))
