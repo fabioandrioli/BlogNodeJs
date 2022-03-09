@@ -1,7 +1,9 @@
+const Post = require('../models/Post')
+
 module.exports = {
-    index(req,res){
-        console.log(req.user)
-        res.render("site/index")
+    async index(req,res){
+        var posts =  await Post.findAll();
+        res.render("site/index",{posts})
     },
 
     formLogin(req,res){
