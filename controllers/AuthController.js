@@ -11,8 +11,8 @@ module.exports = {
 
     verifyCredentials(){
         return passport.authenticate('local', {
-            successRedirect: '/admin/posts',
-            failureRedirect: '/auth/user.login',
+            successRedirect: '/',
+            failureRedirect: '/login',
         })
     },
 

@@ -3,6 +3,7 @@ const app = express();
 const connection = require('./config/connection')
 const indexRoutes = require("./routes/indexRouter");
 const authRoutes = require("./routes/authRouter");
+const siteRoutes = require("./routes/siteRouter");
 const path = require('path');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -51,6 +52,7 @@ app.use(express.static(__dirname + '/public'));
 connection.databaseConnection.authenticate();
 
 //Rotas
+app.use("/",siteRoutes);
 app.use("/admin",middleware.authenticate,indexRoutes);
 app.use("/auth",authRoutes);
 // app.get('/', (req, res) => {

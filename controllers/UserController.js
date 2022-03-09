@@ -1,4 +1,5 @@
-const User = require('../models/User')
+const User = require('../models/User');
+const bcrypt = require('bcryptjs');
 module.exports = {
     async index(req,res){
     //    Post.findAll().then(posts =>{
@@ -15,24 +16,28 @@ module.exports = {
     },
 
     store(req,res){
-        var erros = [];
-
-        if(!req.body.title || typeof req.body.title === 'undefined' || req.body.title == null){
-            erros.push({texto:"Nome invalido"});
-        }
-
-        if(erros.length > 0){
-            res.render('posts/create',{errors:erros});
-        }else{
-            
-            Post.create(req.body).then(respnse => {
-                req.flash('message_sucess','Post criado com sucesso!')
-                res.redirect("/posts");
-            }).catch(error => {
-                req.flash('message_error','Houve um erro ao criar!')
-                console.log(error);
+        bcrypt.genSalt(10, (erro,salt) => {
+            var password = req.body.password
+            console.log(req.body);
+            bcrypt.hash(password,salt, (erro,hash) => {
+                req.body.password = password;
+                if(erro){
+                    res.send("Houve um erro");
+                }else{
+                    User.create(req.body).then(response => {
+                       if(req.isAuthenticated())
+                         res.redirect("/admin/posts")
+                       else{
+                          res.redirect("/login")
+                       }
+                    }).catch(err => {
+                        console.log(err)
+                    })
+                }
             })
-        }
+        })
+        
+
 
     },
 
