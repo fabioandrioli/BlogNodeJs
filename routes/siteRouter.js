@@ -5,12 +5,12 @@ const UserController = require("../controllers/UserController")
 
 router.get('/',SiteController.index);
 
-router.get('/blog',SiteController.index);
+router.get('/show',SiteController.show);
 
 router.get('/login',SiteController.formLogin);
 
 router.get('/register',SiteController.formRegister);
 
-router.post('/register',UserController.store)
+router.post('/register',UserController.store);
 
 module.exports = router;

@@ -59,6 +59,11 @@ app.use("/auth",authRoutes);
 //     res.render('formulario.handlebars')
 // })
 
+app.use(function(req, res, next) {
+    if (!req.route)
+       res.render("errors/404");
+});
+
 
 app.listen(3000,() => {
     console.log("Servidor rodando");
