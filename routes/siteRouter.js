@@ -5,7 +5,7 @@ const UserController = require("../controllers/UserController")
 
 router.get('/',SiteController.index);
 
-router.get('/show',SiteController.show);
+router.get('/show/:id',SiteController.show);
 
 router.get('/login',SiteController.formLogin);
 

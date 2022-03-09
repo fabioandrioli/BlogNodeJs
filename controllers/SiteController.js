@@ -2,12 +2,13 @@ const Post = require('../models/Post')
 
 module.exports = {
     async index(req,res){
-        var posts;// =  await Post.findAll();
+        var posts =  await Post.findAll();
         res.render("site/index",{posts})
     },
 
-    show(req,res){
-        
+    async show(req,res){
+        var post =  await Post.findOne({id:req.params.id}); 
+        res.render("site/show",{post})
     },
 
     formLogin(req,res){

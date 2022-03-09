@@ -41,4 +41,8 @@ Primeiro commit.
 - bcryptjs
    - Para senhas
    ``` npm install bcryptjs```
+
+- ckeditor5
+   Para edições de texto
+   ``` npm i ckeditor5 ```
    
