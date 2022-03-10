@@ -12,6 +12,7 @@ const flash = require('connect-flash');
 const middleware = require('./middleware')
 const passport = require('passport');
 require('./config/auth')(passport)
+const {cors} = require('./config/cors');
 
 
 
@@ -25,6 +26,9 @@ app.use(flash());
 
 //middleware
 app.use(middleware.messages)
+
+//cors
+app.use(cors);
 
 // Definindo caminho da views
 app.set('views', path.join(__dirname, 'views'));
@@ -53,7 +57,7 @@ connection.databaseConnection.authenticate();
 
 //Rotas
 app.use("/",siteRoutes);
-app.use("/admin",middleware.authenticate,indexRoutes);
+app.use("/admin"/*,middleware.authenticate*/,indexRoutes);
 app.use("/auth",authRoutes);
 // app.get('/', (req, res) => {
 //     res.render('formulario.handlebars')

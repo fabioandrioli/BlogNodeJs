@@ -12,11 +12,12 @@
             <h5><%= error.texto %></h5>
         <% }) %>
     <%} %>
-    <form action="/post.store" method="post">
+    <form action="/post.store" method="post" enctype="multipart/form-data">
         <p>Titulo</p>
         <input type="text" name="title">
         <p>Conteúdo</p>
         <textarea name="description" id="" cols="30" rows="10"></textarea>
+        <input type="file" name="image" >
         <button type="submit">Enviar</button>
     </form>
 </body>

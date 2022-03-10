@@ -43,6 +43,10 @@ Primeiro commit.
    ``` npm install bcryptjs```
 
 - ckeditor5
-   Para edições de texto
+   - Para edições de texto
    ``` npm i ckeditor5 ```
+
+- Multer 
+   - Para envio de imagens
+      ``` npm install --save multer ```
    

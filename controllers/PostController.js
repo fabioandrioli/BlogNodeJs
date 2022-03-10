@@ -25,7 +25,9 @@ module.exports = {
         if(erros.length > 0){
             res.render('posts/create',{errors:erros});
         }else{
-            
+          
+            req.body.image = req.filename
+           
             Post.create(req.body).then(respnse => {
                 req.flash('message_sucess','Post criado com sucesso!')
                 res.redirect("/posts");
