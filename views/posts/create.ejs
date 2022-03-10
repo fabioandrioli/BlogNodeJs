@@ -16,9 +16,13 @@
         <p>Titulo</p>
         <input type="text" name="title">
         <p>Conteúdo</p>
-        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        <textarea class="form-control" id="summary-ckeditor" name="description">asdasdas</textarea>
         <input type="file" name="image" >
         <button type="submit">Enviar</button>
     </form>
+    <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+    <script>
+       CKEDITOR.replace( 'summary-ckeditor' );
+    </script>
 </body>
 </html>
