@@ -1,0 +1,44 @@
+<%- include('../../site/partials/header.ejs') -%>
+  <%- include('../partials/header.ejs') -%>
+        <div class="col-9">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-between px-5 mb-5">
+                    <h6 class="text-white font-weight-bold">Posts</h6>
+                    <a class="btn btn-info text-white font-weight-bold" href="/post.create">+ Novo</a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table text-white">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(typeof posts !== 'undefined'){ %>
+                        <% posts.forEach(post => { %>
+                            <tr>
+                                <th scope="row"><%= post.id %></th>
+                                <td><img src="<%= post.image %>" alt="<%= post.title %>"></td>
+                                <td><%= post.title %></td>
+                                <td class="text-truncate"><%= post.description %></td>
+                                <td>
+                                    <a class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
+                                    <a  class="btn btn-danger" href=""><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% }else{ %>
+                        <h1>Nenhum post encontrado</h1>
+                    <%}%> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <%- include('../partials/footer.ejs') -%>
+
+<%- include('../../site/partials/footer.ejs') -%>

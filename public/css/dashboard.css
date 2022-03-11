@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+
+.dashboard-ul{
+    background-color:#c5c5c5;
+    width:100%;
+    padding:2rem;
+    margin-bottom:0;
+    text-decoration: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.dashboard-li{
+    color:#fff;
+    list-style-type: none;
+}
+
+.dashboard-li a{
+    color:black;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight:bold;
+}
+
+.dashboard-li a.active{
+    color: #6a6a6a!important;
+}
+
+.dashboard-li a:hover{
+    color:#6a6a6a;
+}

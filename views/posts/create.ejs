@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-</head>
-<body>
-    <% if(typeof errors !== 'undefined'){ %>
-        <% errors.forEach((error) => { %>
-            <h5><%= error.texto %></h5>
-        <% }) %>
-    <%} %>
-    <form action="/post.store" method="post" enctype="multipart/form-data">
-        <p>Titulo</p>
-        <input type="text" name="title">
-        <p>Conteúdo</p>
-        <textarea class="form-control" id="summary-ckeditor" name="description">asdasdas</textarea>
-        <input type="file" name="image" >
-        <button type="submit">Enviar</button>
-    </form>
-    <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-    <script>
-       CKEDITOR.replace( 'summary-ckeditor' );
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+    </head>
+    <body>
+        <% if(typeof errors !== 'undefined'){ %>
+            <% errors.forEach((error) => { %>
+                <h5><%= error.texto %></h5>
+            <% }) %>
+        <%} %>
+        <form action="/post.store" method="post" enctype="multipart/form-data">
+            <p>Titulo</p>
+            <input type="text" name="title">
+            <p>Conteúdo</p>
+            <textarea class="form-control" id="summary-ckeditor" name="description">asdasdas</textarea>
+            <input type="file" name="image" >
+            <button type="submit">Enviar</button>
+        </form>
+        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+        <script>
+        CKEDITOR.replace( 'summary-ckeditor' );
+        </script>
+    </body>
 </html>

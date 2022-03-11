@@ -1,0 +1,36 @@
+<%- include('../../site/partials/header.ejs') -%>
+    <%- include('../partials/header.ejs') -%>
+        <div class="col-8 ms-3 px-5 bg-light p-5">
+            <h4>Cadastro de post</h4>
+           <form action="/post.store" method="post" enctype="multipart/form-data">
+               <input type="text" name="title" class="form-control mb-4" placeholder="Titulo do post">
+                <textarea class="form-control  mb-4" id="summary-ckeditor" name="description" placeholder="Descricao do post"></textarea>
+                <input id="cat_image" name="image" type="file" class="input_image form-control  mt-4 mb-4" >
+                <img src="" class="image-preview  mb-4" id="category-img-tag" width="200px" />   <!--for preview purpose -->
+                <div>
+                    <button  class="btn btn-info text-white" type="submit">Enviar</button>
+                </div>
+           </form>
+        </div>
+    <%- include('../partials/footer.ejs') -%>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    $('#category-img-tag').attr('src', e.target.result);
+                }
+                
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    
+        $("#cat_image").change(function(){
+            readURL(this);
+        });
+        CKEDITOR.replace( 'summary-ckeditor' );
+    </script>
+<%- include('../../site/partials/footer.ejs') -%>

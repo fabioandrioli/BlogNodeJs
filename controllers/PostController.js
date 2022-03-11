@@ -12,11 +12,13 @@ module.exports = {
     },
 
     create(req,res){
-        res.render('posts/create')
+        res.render('admin/posts/create')
     },
 
     store(req,res){
         var erros = [];
+        console.log(req.body)
+        console.log(req.file)
 
         if(!req.body.title || typeof req.body.title === 'undefined' || req.body.title == null){
             erros.push({texto:"Nome invalido"});

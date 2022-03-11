@@ -4,6 +4,7 @@ const connection = require('./config/connection')
 const indexRoutes = require("./routes/indexRouter");
 const authRoutes = require("./routes/authRouter");
 const siteRoutes = require("./routes/siteRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
 const path = require('path');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -57,7 +58,7 @@ connection.databaseConnection.authenticate();
 
 //Rotas
 app.use("/",siteRoutes);
-app.use("/admin"/*,middleware.authenticate*/,indexRoutes);
+app.use("/admin"/*,middleware.authenticate*/,dashboardRouter);
 app.use("/auth",authRoutes);
 // app.get('/', (req, res) => {
 //     res.render('formulario.handlebars')
