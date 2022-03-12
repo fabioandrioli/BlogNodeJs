@@ -1,13 +1,16 @@
 const Post = require('../models/Post')
+const Category = require('../models/Category')
+
 
 module.exports = {
     async index(req,res){
-        var posts =  await Post.findAll();
+        const posts =  await Post.findAll();
+    
         res.render("site/index",{posts})
     },
 
     async show(req,res){
-        var post =  await Post.findOne({id:req.params.id}); 
+        const post =  await Post.findOne({ where: { id: req.params.id } }); 
         res.render("site/show",{post})
     },
 

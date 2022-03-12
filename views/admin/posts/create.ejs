@@ -4,6 +4,16 @@
             <h4>Cadastro de post</h4>
            <form action="/post.store" method="post" enctype="multipart/form-data">
                <input type="text" name="title" class="form-control mb-4" placeholder="Titulo do post">
+               <select name="categoryId" class="form-select mb-4" aria-label="Default select example">
+                <% if(typeof categories !== 'undefined'){ %>
+                  <% categories.forEach(category => { %>
+                      <option selected>Selecione uma categoria</option>
+                      <option value="<%= category.id %>"><%= category.name %></option>
+                  <% }) %>
+                <% }else{ %>
+                  <option selected>Nenhuma categoria cadastrada</option>
+               <%}%>
+              </select>
                 <textarea class="form-control  mb-4" id="summary-ckeditor" name="description" placeholder="Descricao do post"></textarea>
                 <input id="cat_image" name="image" type="file" class="input_image form-control  mt-4 mb-4" >
                 <img src="" class="image-preview  mb-4" id="category-img-tag" width="200px" />   <!--for preview purpose -->

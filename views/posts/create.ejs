@@ -16,7 +16,19 @@
             <p>Titulo</p>
             <input type="text" name="title">
             <p>Conteúdo</p>
-            <textarea class="form-control" id="summary-ckeditor" name="description">asdasdas</textarea>
+            <select class="form-select" aria-label="Default select example">
+              <% if(typeof categories !== 'undefined'){ %>
+                <% categories.forEach(category => { %>
+                    <option selected>Selecione uma categoria</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                <% }) %>
+              <% }else{ %>
+                <option selected>Nenhuma categoria cadastrada</option>
+             <%}%>
+            </select>
+            <textarea class="form-control" id="summary-ckeditor" name="description"></textarea>
             <input type="file" name="image" >
             <button type="submit">Enviar</button>
         </form>

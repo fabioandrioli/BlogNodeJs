@@ -7,7 +7,7 @@
         <title>BlogNodeJs</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/dashboard.css">
+        <link rel="stylesheet" href="/css/dashboard.css">
     </head>
     <body  style="height: 100%">
         <header class="bg-light">
@@ -28,10 +28,13 @@
                               Categorias
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
+                             <% if(typeof categories !== 'undefined'){ console.log(categories) %>
+                                <% categories.forEach(category => { %>
+                                  <li><a class="dropdown-item" href="#"><%= category.name %></a></li>
+                                <%}) %>
+                              <% }else{ %>
+                                <li class="dropdown-item" >Nenhuma categoria encontrada</li>
+                              <%}%>
                             </ul>
                           </li>
             

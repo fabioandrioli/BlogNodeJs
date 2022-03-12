@@ -1,5 +1,5 @@
 <%- include('../../site/partials/header.ejs') -%>
-  <%- include('../partials/header.ejs') -%>
+    <%- include('../partials/header.ejs') -%>
         <div class="col-9">
             <div class="row">
                 <div class="col-12 d-flex justify-content-between px-5 mb-5">
@@ -14,6 +14,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Imagem</th>
                         <th scope="col">Titulo</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">Descrição</th>
                         <th scope="col">Ações</th>
                         </tr>
@@ -23,12 +24,18 @@
                         <% posts.forEach(post => { %>
                             <tr>
                                 <th scope="row"><%= post.id %></th>
-                                <td><img src="<%= post.image %>" alt="<%= post.title %>"></td>
+                                <td><img style="width:50px;" src="/images/<%= post.image %>" alt="<%= post.title %>"></td>
                                 <td><%= post.title %></td>
-                                <td class="text-truncate"><%= post.description %></td>
+                                <td><%= post.category.name %></td>
+                                <td class="text-truncate" style="width: 150px;">
+                                    <div class="text-truncate" style="width: 150px;height:20px;">
+                                        <%- post.description %>
+                                    </div>
+                                    
+                                </td>
                                 <td>
                                     <a class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
-                                    <a  class="btn btn-danger" href=""><i class="fa fa-trash"></i></a>
+                                    <a  class="btn btn-danger" href="/post.delete/<%= post.id %>"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         <% }) %>
@@ -39,6 +46,5 @@
                 </table>
             </div>
         </div>
-    <%- include('../partials/footer.ejs') -%>
-
-<%- include('../../site/partials/footer.ejs') -%>
+        <%- include('../partials/footer.ejs') -%>
+    <%- include('../../site/partials/footer.ejs') -%>

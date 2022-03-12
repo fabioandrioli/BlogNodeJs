@@ -1,4 +1,5 @@
 const Post = require('../models/Post')
+const Category = require('../models/Category')
 
 module.exports = {
     async index(req,res){
@@ -6,13 +7,19 @@ module.exports = {
     //     res.render("posts/post.handlebars",{posts:posts})
     //    })
 
-        const posts = await Post.findAll({order: [['id','DESC']]});
+        const posts = await Post.findAll({order: [['id','DESC']], 
+            include: [{
+                model: Category,
+            }]
+        });
+        console.log(posts)
         res.render("posts/post",{posts:posts})
        
     },
 
-    create(req,res){
-        res.render('admin/posts/create')
+    async create(req,res){
+        const categories = await Category.findAll();
+        res.render('admin/posts/create',{categories})
     },
 
     store(req,res){
@@ -32,7 +39,7 @@ module.exports = {
            
             Post.create(req.body).then(respnse => {
                 req.flash('message_sucess','Post criado com sucesso!')
-                res.redirect("/posts");
+                res.redirect("/admin");
             }).catch(error => {
                 req.flash('message_error','Houve um erro ao criar!')
                 console.log(error);
@@ -41,10 +48,14 @@ module.exports = {
 
     },
 
+    show(req,res){
+
+    },
+
     delete(req,res){
         
         Post.destroy({where: {'id':req.params.id}}).then(
-            res.redirect("/posts")
+            res.redirect("/admin")
         ).catch(error => console.log(error));
     }
 }

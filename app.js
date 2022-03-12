@@ -53,6 +53,7 @@ app.use(express.json())
 //Configuracao do diretório publico
 app.use(express.static(__dirname + '/public'));
 
+
 //conexao com o banco de dados mysql
 connection.databaseConnection.authenticate();
 

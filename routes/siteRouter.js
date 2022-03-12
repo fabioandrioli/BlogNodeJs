@@ -1,7 +1,13 @@
 const router = require("./router")
+const Category = require('../models/Category')
 
 const SiteController = require("../controllers/SiteController")
 const UserController = require("../controllers/UserController")
+
+router.use(async (req, res, next) => {
+    res.locals.categories = await Category.findAll({limit: 2,order: [['id','DESC']]});
+    next();
+})
 
 router.get('/',SiteController.index);
 

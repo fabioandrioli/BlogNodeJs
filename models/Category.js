@@ -1,23 +1,15 @@
 const connection = require('../config/connection')
-const Category = require('./Category')
 
 //Definindo a model
 //Não é necessario colocar os campos id, created_at, update_at, ele cria automatico.
-const Post = connection.databaseConnection.define("posts",{
-    title:{
-        type:connection.Sequelize.STRING,
-    },
-    image:{
+const Category = connection.databaseConnection.define("categories",{
+    name:{
         type:connection.Sequelize.STRING,
     },
     description:{
         type:connection.Sequelize.TEXT,
     }
 })
+// Category.sync({force:true});
 
-Category.hasMany(Post);
-Post.belongsTo(Category);
-
-// Post.sync({force:true});
-
-module.exports = Post;
+module.exports = Category;
