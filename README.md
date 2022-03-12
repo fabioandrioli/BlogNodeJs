@@ -57,4 +57,9 @@ Primeiro commit.
 Lorem Pics
    - Para gerar imagem aleatoria
    ``` npm install --save lorem-picsum```
+
+- Comando para popular a table posts
+   ** Precisa cadastrar categoria antes
+   ```npm run PostSeeder ```
+   - Este comando ira gerar 5 posts com textos e imagens aleatórios.
    
