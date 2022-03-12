@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "nodemon ./app.js"
+    "start": "nodemon ./app.js",
+    "PostSeeder": "node ./seeders/PostSeeder.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -10,6 +11,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
+    "lorem-ipsum": "^2.0.4",
+    "lorem-picsum": "^1.0.0",
     "multer": "^1.4.4",
     "mysql2": "^2.3.3",
     "passport": "^0.5.2",

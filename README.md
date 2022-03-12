@@ -49,4 +49,12 @@ Primeiro commit.
 - Multer 
    - Para envio de imagens
       ``` npm install --save multer ```
+
+- Lorem
+   - Para gerar textos
+      ```npm i lorem-ipsum```
+
+Lorem Pics
+   - Para gerar imagem aleatoria
+   ``` npm install --save lorem-picsum```
    

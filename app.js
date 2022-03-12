@@ -15,7 +15,7 @@ const passport = require('passport');
 require('./config/auth')(passport)
 const {cors} = require('./config/cors');
 
-
+const Post = require('./models/Post');
 
 //Sessão - é muito importante que fique nessa ordem
 

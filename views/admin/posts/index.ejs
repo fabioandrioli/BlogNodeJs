@@ -24,7 +24,7 @@
                         <% posts.forEach(post => { %>
                             <tr>
                                 <th scope="row"><%= post.id %></th>
-                                <td><img style="width:50px;" src="/images/<%= post.image %>" alt="<%= post.title %>"></td>
+                                <td><img style="width:50px;" src="<%= post.image %>" alt="<%= post.title %>"></td>
                                 <td><%= post.title %></td>
                                 <td><%= post.category.name %></td>
                                 <td class="text-truncate" style="width: 150px;">

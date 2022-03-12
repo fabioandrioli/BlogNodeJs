@@ -1,5 +1,6 @@
 const Post = require('../models/Post')
 const Category = require('../models/Category')
+const Path = "images/"
 
 module.exports = {
     async index(req,res){
@@ -35,7 +36,7 @@ module.exports = {
             res.render('posts/create',{errors:erros});
         }else{
           
-            req.body.image = req.filename
+            req.body.image = Path + req.filename
            
             Post.create(req.body).then(respnse => {
                 req.flash('message_sucess','Post criado com sucesso!')
