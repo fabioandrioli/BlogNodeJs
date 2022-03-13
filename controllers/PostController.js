@@ -1,6 +1,6 @@
 const Post = require('../models/Post')
 const Category = require('../models/Category')
-const Path = "images/"
+const Path = "/images/"
 
 module.exports = {
     async index(req,res){
@@ -50,7 +50,24 @@ module.exports = {
     },
 
     show(req,res){
+        res.render('admin/posts/create',{categories})
+    },
 
+    async edit(req,res){
+        const post = await Post.findOne({include:Category,where:{id:req.params.id}});
+        const categories = await Category.findAll();
+        res.render('admin/posts/edit',{categories,post})
+    },
+
+    async update(req,res){
+        req.body.image = Path + req.filename
+        
+        const post = await Post.findOne({where:{id:req.body.id}})
+        delete req.body.id
+        if(typeof req.file === 'undefined') delete req.body.image
+        post.set(req.body)
+        post.save();
+        res.redirect("/admin");
     },
 
     delete(req,res){
