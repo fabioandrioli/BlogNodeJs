@@ -10,8 +10,10 @@ module.exports = (app) => {
     app.use("/posts",middleware.authenticate,postRoutes);
     app.use("/auth",authRoutes);
     app.use(function(req, res, next) {
-        if (!req.route)
+        if (!req.route){
+           res.status(404);
            res.render("errors/404");
+        }
     });
 
     // app.get('/', (req, res) => {

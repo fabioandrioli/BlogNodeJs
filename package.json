@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "nodemon ./app.js",
-    "test":"jest ./tests",
+    "test": "jest ./tests",
     "PostSeeder": "node ./seeders/PostSeeder.js"
   },
   "dependencies": {
@@ -12,8 +12,6 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-session": "^1.17.2",
-    "lorem-ipsum": "^2.0.4",
-    "lorem-picsum": "^1.0.0",
     "multer": "^1.4.4",
     "mysql2": "^2.3.3",
     "passport": "^0.5.2",
@@ -21,6 +19,9 @@
     "sequelize": "^6.17.0"
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "lorem-ipsum": "^2.0.4",
+    "lorem-picsum": "^1.0.0",
+    "supertest": "^6.2.2"
   }
 }
