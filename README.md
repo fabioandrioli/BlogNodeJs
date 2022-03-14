@@ -12,7 +12,7 @@ Este projeto se trata de mini blog com controle de acesso.
 
 Página incial
 
-![Pagina incial](./imagens_do_projeto/pagina_inicial.png)
+![Pagina incial](./imagens_do_projeto/pagina_inicial.png =250x250)
 
 # Pacotes (NPM)
  - Express 
