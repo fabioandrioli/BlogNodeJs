@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const connection = require('./config/connection')
 const path = require('path');
 const bodyParser = require('body-parser')
@@ -12,9 +11,11 @@ require('./config/auth')(passport)
 const {cors} = require('./config/cors');
 const routers = require("./config/router")
 
+//Inicio de tudo usado o express
+const app = express();
+
 
 //Sessão - é muito importante que fique nessa ordem
-
 app.use(session);
 app.use(passport.initialize());
 app.use(passport.session());
