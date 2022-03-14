@@ -2,12 +2,12 @@
     <%- include('../partials/header.ejs') -%>
         <div class="col-8 ms-3 px-5 bg-light p-5">
             <h4>Cadastro de post</h4>
-           <form action="/post.store" method="post" enctype="multipart/form-data">
+           <form action="/posts/post.store" method="post" enctype="multipart/form-data">
                <input type="text" name="title" class="form-control mb-4" placeholder="Titulo do post">
                <select name="categoryId" class="form-select mb-4" aria-label="Default select example">
                 <% if(typeof categories !== 'undefined'){ %>
+                    <option selected>Selecione uma categoria</option>
                   <% categories.forEach(category => { %>
-                      <option selected>Selecione uma categoria</option>
                       <option value="<%= category.id %>"><%= category.name %></option>
                   <% }) %>
                 <% }else{ %>

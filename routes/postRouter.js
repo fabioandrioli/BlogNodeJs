@@ -5,7 +5,7 @@ const upload = require("../config/file")
 
 const PostController = require("../controllers/PostController")
 
-router.get('/posts',PostController.index);
+router.get('/',PostController.index);
 
 router.get('/post.create',PostController.create)
 

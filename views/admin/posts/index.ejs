@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-between px-5 mb-5">
                     <h6 class="text-white font-weight-bold">Posts</h6>
-                    <a class="btn btn-info text-white font-weight-bold" href="/post.create">+ Novo</a>
+                    <a class="btn btn-info text-white font-weight-bold" href="/posts/post.create">+ Novo</a>
                 </div>
             </div>
             <div class="table-responsive">
@@ -34,8 +34,8 @@
                                     
                                 </td>
                                 <td>
-                                    <a class="btn btn-primary" href="/post.edit/<%= post.id %>""><i class="fa fa-edit"></i></a>
-                                    <a  class="btn btn-danger" href="/post.delete/<%= post.id %>"><i class="fa fa-trash"></i></a>
+                                    <a class="btn btn-primary" href="/posts/post.edit/<%= post.id %>""><i class="fa fa-edit"></i></a>
+                                    <a  class="btn btn-danger" href="/posts/post.delete/<%= post.id %>"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         <% }) %>

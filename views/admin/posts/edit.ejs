@@ -2,7 +2,7 @@
     <%- include('../partials/header.ejs') -%>
         <div class="col-8 ms-3 px-5 bg-light p-5">
             <h4 class="text-truncate">Editar post <%= post.category.name %></h4>
-           <form action="/post.update" method="POST" enctype="multipart/form-data">
+           <form action="/posts/post.update" method="POST" enctype="multipart/form-data">
                <input type="hidden" value="<%= post.id %>" name="id">
                <input type="text" name="title" value="<%= post.title %>" class="form-control mb-4" placeholder="Titulo do post">
                <select name="categoryId" class="form-select mb-4" aria-label="Default select example">

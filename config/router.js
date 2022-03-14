@@ -7,7 +7,7 @@ const dashboardRouter = require("../routes/dashboardRouter");
 module.exports = (app) => {
     app.use("/",siteRoutes);
     app.use("/admin",middleware.authenticate,dashboardRouter);
-    app.use("/admin/posts",middleware.authenticate,postRoutes);
+    app.use("/posts",middleware.authenticate,postRoutes);
     app.use("/auth",authRoutes);
     app.use(function(req, res, next) {
         if (!req.route)
