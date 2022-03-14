@@ -54,57 +54,57 @@ Este projeto se trata de mini blog com controle de acesso.
 - Handlebars 
     - É a engine do projeto, vai gerenciar a parte frontend do blog. Geralmente é ultilizada o EJS, mas
     o Handlebars parece ser mais bonito em suas declarações. o que facilita no entendimento. Me lembra muito o blade do laravel.
-    ```install express-handlebars --save ```
+    - ```install express-handlebars --save ```
 
 - ejs 
    - Mudança na ultilizacao do engine, por conta da documentacao do handlebars estar desatualizada.
    -Pacote  express-handlebars desistalado.
-   ```  npm install ejs ```
+   - ```  npm install ejs ```
 
    
 - Connect flash
    - Para variaveis de sessao
-   ```  npm install connect-flash ```
+   - ```  npm install connect-flash ```
 
 - Express session
    - Para variaveis de sessao
-   ```  npm install express-session ```
+   - ```  npm install express-session ```
 
 - Passport
    - Para controle de acesso
-   ``` npm i passport --save ```
+   - ``` npm i passport --save ```
 
 - Passport local
    - Para controle de acesso usando o local, temos que instalar os dois
-   ``` npm i passport-local --save ```
+   - ``` npm i passport-local --save ```
 
 - bcryptjs
    - Para senhas
-   ``` npm install bcryptjs```
+   - ``` npm install bcryptjs```
 
 - ckeditor5
    - Para edições de texto
-   ``` npm i ckeditor5 ```
+   - ``` npm i ckeditor5 ```
 
 - Multer 
    - Para envio de imagens
-      ``` npm install --save multer ```
+   -  ``` npm install --save multer ```
 
 - Lorem
    - Para gerar textos
-      ```npm i lorem-ipsum```
+   -  ```npm i lorem-ipsum```
 
 Lorem Pics
    - Para gerar imagem aleatoria
-   ``` npm install --save lorem-picsum```
+   - ``` npm install --save lorem-picsum```
 
 Jest
    - Para realizar tests na aplicação.
-   ``` npm i --save jest ```
+   - ``` npm i --save jest ```
 
 Supertest
    - Para realizar tests na aplicação simulando o servidor.
-   ``` npm i --save supertest ```
+   - ``` npm i --save supertest ```
 
 - Comando para popular a table posts
    ** Precisa cadastrar categoria antes
