@@ -10,6 +10,7 @@ const middleware = require('./middleware')
 const passport = require('passport');
 require('./config/auth')(passport)
 const {cors} = require('./config/cors');
+const routers = require("./config/router")
 
 
 //Sessão - é muito importante que fique nessa ordem
@@ -53,7 +54,7 @@ app.use(express.static(__dirname + '/public'));
 connection.databaseConnection.authenticate();
 
 //Rotas
-require("./config/router")(app)
+routers(app);
 
 app.listen(3000,() => {
     console.log("Servidor rodando");
