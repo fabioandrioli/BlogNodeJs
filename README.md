@@ -7,6 +7,7 @@ Este projeto se trata de mini blog com controle de acesso.
 - [x] Implementacao de um modelo ORM (sequelize).
 - [x] Implementacao de uma api para controle de login (passport).
 - [x] Implementação de uma api gerenciador de arquivo.
+- [x] Implementação do jest para testes.
 
 # Imagens do projeto.
 
