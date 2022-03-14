@@ -20,7 +20,7 @@ module.exports = {
             var password = req.body.password
             console.log(req.body);
             bcrypt.hash(password,salt, (erro,hash) => {
-                req.body.password = password;
+                req.body.password = hash;
                 if(erro){
                     res.send("Houve um erro");
                 }else{
