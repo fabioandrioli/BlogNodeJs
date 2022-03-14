@@ -10,10 +10,36 @@ Este projeto se trata de mini blog com controle de acesso.
 
 # Imagens do projeto.
 
-Página incial
+<div style="display: flex; flex-wrap: wrap;">
+   
+   Página incial
 
-<img src="./imagens_do_projeto/pagina_inicial.png" width="600" height="600"/>
+   <img src="./imagens_do_projeto/pagina_inicial.png" width="600" height="600"/>
 
+   Página de exibicao do post
+
+   <img src="./imagens_do_projeto/localhost_3000_show_5.png" width="600" height="600"/>
+
+   Página de registro
+
+   <img src="./imagens_do_projeto/localhost_3000_register.png" width="600" height="600"/>
+
+   Página de login
+
+   <img src="./imagens_do_projeto/localhost_3000_login.png" width="600" height="600"/>
+
+   Página de administracao
+
+   <img src="./imagens_do_projeto/localhost_3000_admin.png" width="600" height="600"/>
+
+   Página de criacao de post
+
+   <img src="./imagens_do_projeto/localhost_3000_posts_post.create.png" width="600" height="600"/>
+
+   Página de edicao de post
+
+   <img src="./imagens_do_projeto/localhost_3000_posts_post.edit_8.png" width="600" height="600"/>
+</div>
 
 # Pacotes (NPM)
  - Express 
