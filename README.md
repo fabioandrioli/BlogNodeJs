@@ -15,7 +15,7 @@ Este projeto se trata de mini blog com controle de acesso.
    
    Página incial
 
-   <img src="./imagens_do_projeto/pagina_inicial.png" width="600" height="600"/>
+   <img src="./imagens_do_projeto/pagina_inicial.png" width="100%" />
 
    Página de exibicao do post
 
