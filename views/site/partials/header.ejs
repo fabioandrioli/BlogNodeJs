@@ -55,10 +55,10 @@
                         <% } else {%>
                          <ul class="navbar-nav mb-2 ms-lg-5 ms-md-5 mb-lg-0 mt-3 mt-lg-0 mt-md-0">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href=""><%= user.name %></a>
+                                <a class="nav-link" aria-current="page" href="/admin"><i class="fa fa-user"></i> <%= user.name %></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="/logout"><i class="fa fa-lock"></i> Sair</a>
+                                <a class="nav-link" aria-current="page" href="/auth/logout"><i class="fa fa-lock"></i> Sair</a>
                             </li>
                         </ul>
                         <%}%>

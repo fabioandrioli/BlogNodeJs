@@ -5,7 +5,7 @@ module.exports = {
         if(!req.isAuthenticated())
             res.render("user/login")
         else{
-            res.redirect("/admin/posts")
+            res.redirect("/admin")
         }
     },
 
@@ -18,6 +18,6 @@ module.exports = {
 
     logout(req,res){
         req.logout()
-        res.redirect("login")
+        res.redirect("/login")
     },
 }

@@ -1,10 +1,6 @@
 const express = require('express');
 const app = express();
 const connection = require('./config/connection')
-const indexRoutes = require("./routes/indexRouter");
-const authRoutes = require("./routes/authRouter");
-const siteRoutes = require("./routes/siteRouter");
-const dashboardRouter = require("./routes/dashboardRouter");
 const path = require('path');
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
@@ -15,7 +11,6 @@ const passport = require('passport');
 require('./config/auth')(passport)
 const {cors} = require('./config/cors');
 
-const Post = require('./models/Post');
 
 //Sessão - é muito importante que fique nessa ordem
 
@@ -58,18 +53,7 @@ app.use(express.static(__dirname + '/public'));
 connection.databaseConnection.authenticate();
 
 //Rotas
-app.use("/",siteRoutes);
-app.use("/admin"/*,middleware.authenticate*/,dashboardRouter);
-app.use("/auth",authRoutes);
-// app.get('/', (req, res) => {
-//     res.render('formulario.handlebars')
-// })
-
-app.use(function(req, res, next) {
-    if (!req.route)
-       res.render("errors/404");
-});
-
+require("./config/router")(app)
 
 app.listen(3000,() => {
     console.log("Servidor rodando");

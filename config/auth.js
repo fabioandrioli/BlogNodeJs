@@ -12,14 +12,14 @@ const User = require('../models/User')
 
 module.exports = function (passport) {
     async function findUser (email){
-        return await User.findOne({email:email})
+        return await User.findOne({where:{email:email}})
         // return users.find(item => item.email === email)
     }
 
     async function findUserById(id){
         // return users.find(item => item.id === id)
        
-        return await User.findOne({id:id})
+        return await User.findOne({where:{id:id}})
     }
 
     passport.serializeUser((user,done) => {

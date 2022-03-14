@@ -13,7 +13,6 @@ module.exports = {
                 model: Category,
             }]
         });
-        console.log(posts)
         res.render("posts/post",{posts:posts})
        
     },
@@ -25,8 +24,6 @@ module.exports = {
 
     store(req,res){
         var erros = [];
-        console.log(req.body)
-        console.log(req.file)
 
         if(!req.body.title || typeof req.body.title === 'undefined' || req.body.title == null){
             erros.push({texto:"Nome invalido"});
@@ -50,7 +47,7 @@ module.exports = {
     },
 
     show(req,res){
-        res.render('admin/posts/create',{categories})
+        res.render('admin/posts/create')
     },
 
     async edit(req,res){
