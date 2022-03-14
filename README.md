@@ -1,6 +1,18 @@
 # BlogNodeJs
-Para consolidar os conhecimento em NodeJs resolvi desenvolver um blog
-Primeiro commit.
+Para consolidar os conhecimento em NodeJs resolvi desenvolver um blog.
+Este projeto se trata de mini blog com controle de acesso.
+
+- [x] Estrutura do projeto.
+- [x] Implementação do padrão MVC.
+- [x] Implementacao de um modelo ORM (sequelize).
+- [x] Implementacao de uma api para controle de login (passport).
+- [x] Implementação de uma api gerenciador de arquivo.
+
+# Imagens do projeto.
+
+Página incial
+
+![Pagina incial](./imagens_do_projeto/pagina_inicial.png)
 
 # Pacotes (NPM)
  - Express 
@@ -62,4 +74,5 @@ Lorem Pics
    ** Precisa cadastrar categoria antes
    ```npm run PostSeeder ```
    - Este comando ira gerar 5 posts com textos e imagens aleatórios.
-   
+
+---
