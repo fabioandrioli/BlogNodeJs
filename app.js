@@ -14,6 +14,8 @@ const routers = require("./config/router")
 //Inicio de tudo usado o express
 const app = express();
 
+const port = "3000";
+
 
 //Sessão - é muito importante que fique nessa ordem
 app.use(session);
@@ -57,6 +59,6 @@ connection.databaseConnection.authenticate();
 //Rotas
 routers(app);
 
-app.listen(3000,() => {
-    console.log("Servidor rodando");
+app.listen(port,() => {
+    console.log(`Servidor rodando na porta ${port}`);
 })
