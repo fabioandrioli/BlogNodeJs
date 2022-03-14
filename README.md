@@ -12,7 +12,7 @@ Este projeto se trata de mini blog com controle de acesso.
 
 Página incial
 
-<img src="./imagens_do_projeto/pagina_inicial.png" width="600" height="300"/>
+<img src="./imagens_do_projeto/pagina_inicial.png" width="300" height="300"/>
 
 
 # Pacotes (NPM)
