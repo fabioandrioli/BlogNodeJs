@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "nodemon ./app.js",
+    "test":"jest",
     "PostSeeder": "node ./seeders/PostSeeder.js"
   },
   "dependencies": {
