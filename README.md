@@ -98,6 +98,14 @@ Lorem Pics
    - Para gerar imagem aleatoria
    ``` npm install --save lorem-picsum```
 
+Jest
+   - Para realizar tests na aplicação.
+   ``` npm i --save jest ```
+
+Supertest
+   - Para realizar tests na aplicação simulando o servidor.
+   ``` npm i --save supertest ```
+
 - Comando para popular a table posts
    ** Precisa cadastrar categoria antes
    ```npm run PostSeeder ```
