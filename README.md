@@ -44,10 +44,10 @@ Este projeto se trata de mini blog com controle de acesso.
 
 # Pacotes (NPM)
  - Express 
-    ``` npm install express --save ``` 
+   - ``` npm install express --save ``` 
  - Sequelize 
     - O sequelize facilita o trabalho com o mysql, ele vai ser no nosso ORM.
-    ``` npm install sequelize --save ``` 
+    - ``` npm install sequelize --save ``` 
  - MYSQL
    - ``` npm install mysql2 --save ```
 
@@ -94,21 +94,21 @@ Este projeto se trata de mini blog com controle de acesso.
    - Para gerar textos
    -  ```npm i lorem-ipsum```
 
-Lorem Pics
+- Lorem Pics
    - Para gerar imagem aleatoria
    - ``` npm install --save lorem-picsum```
 
-Jest
+- Jest
    - Para realizar tests na aplicação.
    - ``` npm i --save jest ```
 
-Supertest
+- Supertest
    - Para realizar tests na aplicação simulando o servidor.
    - ``` npm i --save supertest ```
 
 - Comando para popular a table posts
-   ** Precisa cadastrar categoria antes
-   ```npm run PostSeeder ```
+   - ** Precisa cadastrar categoria antes
+   - ```npm run PostSeeder ```
    - Este comando ira gerar 5 posts com textos e imagens aleatórios.
 
 ---
